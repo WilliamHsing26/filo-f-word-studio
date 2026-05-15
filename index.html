@@ -494,6 +494,7 @@ nav a:hover{color:var(--ink)}
   padding-left:12px;border-left:1px solid rgba(255,255,255,.12);
 }
 .fi-big{font-size:clamp(2.8rem,6vw,5.8rem);color:var(--filo-fg);max-width:480px;line-height:1.05}
+.fi-big em{color:var(--filo-fg);opacity:.35;font-style:italic}
 .fi-sub{
   margin-top:28px;max-width:400px;
   font-size:.86rem;line-height:2;
@@ -733,6 +734,57 @@ nav a:hover{color:var(--ink)}
   .fi-meta{grid-template-columns:1fr 1fr}
 }
 
+/* FILO current partners */
+.fi-partners{
+  padding:80px 40px 60px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  position:relative;z-index:1;
+}
+.fi-partners-eye{
+  font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--filo-fg);opacity:.35;margin-bottom:36px;display:block;
+}
+.fi-partners-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1px;background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.07);
+}
+.fi-partner-card{
+  background:var(--filo-bg);
+  padding:32px 28px 28px;
+  display:flex;flex-direction:column;gap:10px;
+  transition:background .2s;
+}
+.fi-partner-card:hover{background:rgba(255,255,255,.03)}
+.fi-partner-loc{
+  display:flex;align-items:center;gap:8px;
+  font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--filo-fg);opacity:.35;
+}
+.fi-partner-flag{font-size:.9rem;opacity:.9}
+.fi-partner-name{
+  font-size:.88rem;font-weight:600;
+  color:var(--filo-fg);opacity:.85;line-height:1.3;
+  margin-top:4px;
+}
+.fi-partner-desc{
+  font-size:.72rem;color:var(--filo-fg);opacity:.4;line-height:1.85;
+  flex:1;
+}
+.fi-partner-link{
+  font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--filo-fg);opacity:.35;
+  transition:opacity .2s;display:inline-block;margin-top:8px;
+}
+.fi-partner-link:hover{opacity:.8}
+@media(max-width:900px){
+  .fi-partners{padding:60px 24px 48px}
+  .fi-partners-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:480px){
+  .fi-partners-grid{grid-template-columns:1fr}
+}
+
 /* ─────────────────── S5 FOOTER ─────────────────── */
 #s5{
   background:var(--ink);color:var(--bg);
@@ -877,15 +929,15 @@ nav a:hover{color:var(--ink)}
     </div>
 
     <h1 class="t-display b-headline rv rv1">
-      <span data-en>Go and<br>see. <em>Start<br>your journey.</em></span>
-      <span data-jp>行って、<br>見て。<em>旅を<br>始めよう。</em></span>
-      <span data-cht>出發，<br>去看。<em>開始<br>你的旅程。</em></span>
+      <span data-en>Reconstruct<br>the DNA. <em>Engineer<br>the future.</em></span>
+      <span data-jp>DNAを再構築。<br><em>未来を設計する。</em></span>
+      <span data-cht>重構設計DNA，<br><em>工程化未來。</em></span>
     </h1>
 
     <p class="b-sub rv rv2">
-      <span data-en>F WORD STUDIO — a Taiwan design and OEM/ODM company. We make precision objects and build award-winning brands. Creator of FILO 緋絡.</span>
-      <span data-jp>F WORD STUDIO — 台湾のデザイン・OEM/ODM企業。精密な製品を作り、受賞ブランドを育てます。FILO 緋絡の創造者。</span>
-      <span data-cht>F WORD STUDIO——台灣設計與OEM/ODM公司。我們製造精工物件，打造獲獎品牌。FILO 緋絡品牌創建者。</span>
+      <span data-en>Reconstructing the DNA of vintage aesthetics into engineered designs — transforming wearable systems for the future. Taiwan-based design &amp; OEM/ODM studio. Creator of FILO 緋絡.</span>
+      <span data-jp>ヴィンテージの美学のDNAをエンジニアリングデザインに再構築し、未来のウェアラブルシステムへと変革する。台湾を拠点にするデザイン・OEM/ODMスタジオ。FILO 緋絡の創造者。</span>
+      <span data-cht>將復古美學的DNA重構為工程設計，為未來打造可穿戴系統。台灣設計與OEM/ODM工作室。FILO 緋絡品牌創建者。</span>
     </p>
 
     <div class="b-ctas rv rv3">
@@ -919,7 +971,7 @@ nav a:hover{color:var(--ink)}
         <p class="b-stat-l"><span data-en>Years</span><span data-jp>年</span><span data-cht>年經驗</span></p>
       </div>
       <div class="b-stat">
-        <p class="b-stat-n">2×</p>
+        <p class="b-stat-n">3×</p>
         <p class="b-stat-l"><span data-en>Int'l Awards</span><span data-jp>国際賞</span><span data-cht>國際獎項</span></p>
       </div>
       <div class="b-stat">
@@ -1122,11 +1174,11 @@ nav a:hover{color:var(--ink)}
         <span data-en>We specialize in</span><span data-jp>専門分野</span><span data-cht>專精領域</span>
       </p>
       <div class="capa-list">
+        <div class="capa-item"><span class="capa-dot"></span><span data-en>Apparel & clothing</span><span data-jp>服飾・アパレル</span><span data-cht>服飾與成衣</span></div>
         <div class="capa-item"><span class="capa-dot"></span><span data-en>Bags & soft goods</span><span data-jp>バッグ・ソフトグッズ</span><span data-cht>包袋與軟性商品</span></div>
-        <div class="capa-item"><span class="capa-dot"></span><span data-en>EDC & everyday accessories</span><span data-jp>EDC・日常アクセサリー</span><span data-cht>EDC日常配件</span></div>
-        <div class="capa-item"><span class="capa-dot"></span><span data-en>Outdoor & lifestyle products</span><span data-jp>アウトドア・ライフスタイル</span><span data-cht>戶外與生活風格商品</span></div>
-        <div class="capa-item"><span class="capa-dot"></span><span data-en>Stationery & leather goods</span><span data-jp>文具・革製品</span><span data-cht>文具與皮革製品</span></div>
-        <div class="capa-item"><span class="capa-dot"></span><span data-en>UNISEX design perspective</span><span data-jp>ユニセックスデザイン視点</span><span data-cht>UNISEX設計視角</span></div>
+        <div class="capa-item"><span class="capa-dot"></span><span data-en>Stationery & gift items</span><span data-jp>文具・ギフト品</span><span data-cht>文具與禮贈品</span></div>
+        <div class="capa-item"><span class="capa-dot"></span><span data-en>Daily goods & lifestyle accessories</span><span data-jp>日常雑貨・ライフスタイル</span><span data-cht>日常雜貨與生活配件</span></div>
+        <div class="capa-item"><span class="capa-dot"></span><span data-en>Print & packaging</span><span data-jp>印刷・パッケージ</span><span data-cht>印刷品與包裝</span></div>
       </div>
     </div>
   </div>
@@ -1172,6 +1224,17 @@ nav a:hover{color:var(--ink)}
               <span data-en>Product Design — Deutsches Design Zentrum, Germany</span>
               <span data-jp>プロダクトデザイン — ドイツ</span>
               <span data-cht>產品設計 — 德國設計中心</span>
+            </p>
+          </div>
+        </div>
+        <div class="fi-award">
+          <p class="fi-award-yr">2016</p>
+          <div class="fi-award-info">
+            <p class="fi-award-name">Good Design Selection</p>
+            <p class="fi-award-cat">
+              <span data-en>Good Design Award Australia — Design Institute of Australia</span>
+              <span data-jp>グッドデザイン賞 オーストラリア — Design Institute of Australia</span>
+              <span data-cht>好設計獎 — 澳洲設計學會</span>
             </p>
           </div>
         </div>
@@ -1226,7 +1289,7 @@ nav a:hover{color:var(--ink)}
         </div>
         <div class="fi-meta-cell">
           <p class="fi-meta-label"><span data-en>Int'l Awards</span><span data-jp>国際賞</span><span data-cht>國際獎項</span></p>
-          <p class="fi-meta-value">2× Intl.</p>
+          <p class="fi-meta-value">3× Intl.</p>
         </div>
         <div class="fi-meta-cell">
           <p class="fi-meta-label"><span data-en>Perspective</span><span data-jp>視点</span><span data-cht>設計視角</span></p>
@@ -1465,6 +1528,73 @@ nav a:hover{color:var(--ink)}
 
   <!-- ④ Channel Partnership -->
   <div class="fi-channel" id="fi-ch">
+
+    <!-- Existing Partners showcase -->
+    <div class="fi-partners">
+      <p class="fi-partners-eye rv">
+        <span data-en>Current Partners</span><span data-jp>現在のパートナー</span><span data-cht>現有合作夥伴</span>
+      </p>
+      <div class="fi-partners-grid">
+
+        <!-- Tokyo #1 -->
+        <div class="fi-partner-card rv">
+          <div class="fi-partner-loc"><span class="fi-partner-flag">🇯🇵</span> <span>Tokyo</span></div>
+          <p class="fi-partner-name">Cafe Super Racer</p>
+          <p class="fi-partner-desc">
+            <span data-en>A coastal café in Shibaura, Tokyo Bay — beloved by the motorcycle community as the go-to gathering space for riders and lifestyle enthusiasts alike.</span>
+            <span data-jp>東京湾芝浦の海辺のカフェ。ライダーとライフスタイル愛好家の集いの場として愛されています。</span>
+            <span data-cht>位於東京灣芝浦海岸的咖啡館，是機車愛好者與生活風格族群的聚會聖地。</span>
+          </p>
+          <a class="fi-partner-link" href="https://www.ne.jp/asahi/motoristcafe/superracer/index.html" target="_blank" rel="noopener">
+            <span data-en>Visit →</span><span data-jp>訪問 →</span><span data-cht>前往 →</span>
+          </a>
+        </div>
+
+        <!-- Tokyo #2 -->
+        <div class="fi-partner-card rv rv1">
+          <div class="fi-partner-loc"><span class="fi-partner-flag">🇯🇵</span> <span>Tokyo</span></div>
+          <p class="fi-partner-name">Good Design Store Tokyo by Nohara</p>
+          <p class="fi-partner-desc">
+            <span data-en>The official authorised store of the Good Design Award (公益財団法人 日本デザイン振興会). FILO award-winning backpacks are showcased and sold here periodically.</span>
+            <span data-jp>グッドデザイン賞公認の専門店。FILOの受賞後背包を不定期に展示・販売しています。</span>
+            <span data-cht>好設計獎主辦單位公益財団法人日本デザイン振興会公認專賣店。FILO獲獎後背包不定期於此展示販售。</span>
+          </p>
+          <a class="fi-partner-link" href="https://gds.tokyo" target="_blank" rel="noopener">
+            <span data-en>Visit →</span><span data-jp>訪問 →</span><span data-cht>前往 →</span>
+          </a>
+        </div>
+
+        <!-- Taiwan #1 -->
+        <div class="fi-partner-card rv rv2">
+          <div class="fi-partner-loc"><span class="fi-partner-flag">🇹🇼</span> <span>Taiwan · Taipei</span></div>
+          <p class="fi-partner-name">Blackbird Coffee</p>
+          <p class="fi-partner-desc">
+            <span data-en>Named after the classic Beatles song, Blackbird Coffee is a neighbourhood café steeped in vinyl culture — pour-overs, espresso, and weekend brunch in a warm community space.</span>
+            <span data-jp>ビートルズの名曲にちなんで命名。手淹れコーヒーとエスプレッソ、週末ブランチを提供するコミュニティカフェ。</span>
+            <span data-cht>以披頭四經典歌曲命名，黑鳥咖啡以披頭四收藏為主題，提供手沖與義式咖啡及週末早午餐，是社區的舒適聚所。</span>
+          </p>
+          <a class="fi-partner-link" href="https://www.facebook.com/profile.php?id=61550606593024" target="_blank" rel="noopener">
+            <span data-en>Visit →</span><span data-jp>訪問 →</span><span data-cht>前往 →</span>
+          </a>
+        </div>
+
+        <!-- Taiwan #2 -->
+        <div class="fi-partner-card rv rv3">
+          <div class="fi-partner-loc"><span class="fi-partner-flag">🇹🇼</span> <span>Taiwan · New Taipei</span></div>
+          <p class="fi-partner-name">KICK CAFÉ</p>
+          <p class="fi-partner-desc">
+            <span data-en>Tucked in the scenic Zhitan area of Xindian, KICK CAFÉ blends handcrafted burgers with a custom motorcycle workshop aesthetic — a celebration of Taiwan's street moto culture.</span>
+            <span data-jp>新店直潭の風光明媚な場所に位置し、手作りバーガーとカスタムバイクのワークショップ美学を融合させたカフェ。</span>
+            <span data-cht>位於新店直潭的風景之地，結合手工漢堡與街頭機車工作室風格，忠實記錄台灣機車文化的熱情與精神。</span>
+          </p>
+          <a class="fi-partner-link" href="https://www.facebook.com/KickCafeRider" target="_blank" rel="noopener">
+            <span data-en>Visit →</span><span data-jp>訪問 →</span><span data-cht>前往 →</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
     <div class="fi-ch-inner">
       <div class="fi-ch-left">
         <p class="fi-ch-eye rv">
@@ -1585,6 +1715,7 @@ nav a:hover{color:var(--ink)}
     <p class="ft-copy">© 2026 F WORD STUDIO · All rights reserved · Taiwan</p>
     <div class="ft-awards">
       <span class="ft-aw">Red Dot Award 2015</span>
+      <span class="ft-aw">Good Design Selection 2016 · Australia</span>
       <span class="ft-aw">Good Design Award 2023</span>
     </div>
   </div>
