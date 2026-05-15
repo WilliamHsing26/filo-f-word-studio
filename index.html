@@ -300,27 +300,26 @@ nav a:hover{color:var(--ink)}
   display:grid;grid-template-rows:1fr auto;
 }
 .b-visual{
-  display:flex;align-items:center;justify-content:center;
-  padding:60px 40px;position:relative;overflow:hidden;
+  position:relative;overflow:hidden;
+  padding:0;
 }
-.b-wm{
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  pointer-events:none;overflow:hidden;
+.b-photo{
+  width:100%;height:100%;min-height:420px;
+  object-fit:cover;
+  object-position:62% 18%;
+  display:block;
 }
-.b-wm span{
-  font-family:var(--ff-display);font-size:34vw;font-weight:400;
-  color:var(--border-l);line-height:.8;user-select:none;opacity:.5;
-}
-.b-product-frame{
-  position:relative;z-index:1;
-  width:65%;aspect-ratio:3/4;
-  border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-}
+.b-wm{display:none}
+.b-product-frame{display:none}
 .b-product-tag{
-  position:absolute;bottom:-1px;right:-1px;
-  background:var(--surface);border:1px solid var(--border);
+  position:absolute;bottom:0;right:0;
+  background:rgba(var(--surface-rgb,248,247,244),.92);
+  backdrop-filter:blur(8px);
+  border:1px solid var(--border);border-right:none;border-bottom:none;
   padding:9px 16px;
+}
+[data-theme="dark"] .b-product-tag{
+  background:rgba(26,26,24,.88);
 }
 .b-product-tag p{font-size:.62rem;color:var(--ink3);letter-spacing:.1em;text-transform:uppercase;line-height:1.6}
 .b-product-tag strong{font-size:.72rem;color:var(--ink)}
@@ -336,8 +335,8 @@ nav a:hover{color:var(--ink)}
 @media(max-width:820px){
   #s1{grid-template-columns:1fr;min-height:auto}
   .b-left{padding:80px 24px 52px}
-  .b-right{min-height:56vw}
-  .b-wm span{font-size:65vw}
+  .b-right{min-height:72vw}
+  .b-photo{min-height:72vw;object-position:60% 15%}
   .b-float-2{display:none}
 }
 
@@ -907,19 +906,10 @@ nav a:hover{color:var(--ink)}
   <div class="b-right">
     <div class="b-float b-float-2 t-cap">Design · OEM · ODM</div>
     <div class="b-visual">
-      <div class="b-wm"><span>F</span></div>
-      <div class="b-product-frame rv rv2">
-        <svg width="100" height="134" viewBox="0 0 100 134" fill="none" xmlns="http://www.w3.org/2000/svg" style="opacity:.18">
-          <rect x="10" y="24" width="80" height="100" rx="10" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M28 24 Q28 10 50 10 Q72 10 72 24" stroke="currentColor" stroke-width="1.5" fill="none"/>
-          <rect x="18" y="44" width="64" height="36" rx="4" stroke="currentColor" stroke-width="1"/>
-          <line x1="18" y1="96" x2="82" y2="96" stroke="currentColor" stroke-width=".8"/>
-          <circle cx="50" cy="112" r="7" stroke="currentColor" stroke-width="1"/>
-        </svg>
-        <div class="b-product-tag">
-          <p>FILO Day Backpack</p>
-          <strong><span data-en>Good Design Award 2023</span><span data-jp>グッドデザイン賞2023</span><span data-cht>好設計獎 2023</span></strong>
-        </div>
+      <img class="b-photo rv rv2" src="DSC_4116.jpg" alt="FILO Day Backpack — Good Design Award 2023">
+      <div class="b-product-tag">
+        <p>FILO Day Backpack</p>
+        <strong><span data-en>Good Design Award 2023</span><span data-jp>グッドデザイン賞2023</span><span data-cht>好設計獎 2023</span></strong>
       </div>
     </div>
 
