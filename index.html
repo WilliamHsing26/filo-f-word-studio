@@ -1491,7 +1491,9 @@ nav a:hover{color:var(--ink)}
           <span data-cht>FILO不直接向消費者銷售。我們透過精選的通路夥伴成長——零售店、選物店、生活風格精品店、快閃市集及線上選品商城。我們正在尋找與我們在品質與深思熟慮設計上擁有共同價值觀的夥伴。</span>
         </p>
 
-        <form class="fi-ch-form rv rv3" onsubmit="handleForm(event)">
+        <form class="fi-ch-form rv rv3" onsubmit="handleForm(event)" id="enquiry-form">
+          <input type="hidden" name="_subject" value="FILO Channel Enquiry — F WORD STUDIO">
+          <input type="hidden" name="_replyto" id="hidden-email">
           <input class="fi-input" type="text" name="company" required placeholder="" id="p-company">
           <input class="fi-input" type="email" name="email" required placeholder="" id="p-email">
           <select class="fi-input fi-select" name="type" id="p-type">
@@ -1672,13 +1674,34 @@ const s0=document.getElementById('s0');
 window.addEventListener('scroll',()=>{s0.classList.toggle('scrolled',window.scrollY>30)},{passive:true});
 
 /* ── Form ── */
-function handleForm(e){
+const FORMSPREE_ID = 'mnjwkwey';
+async function handleForm(e){
   e.preventDefault();
   const btn=document.querySelector('.fi-submit');
   const l=document.documentElement.getAttribute('data-lang')||'cht';
-  const msgs={en:'Thank you — we\'ll be in touch soon.',jp:'ありがとうございます。近日中にご連絡いたします。',cht:'感謝您的洽詢，我們將盡快與您聯繫。'};
-  btn.textContent=msgs[l];
-  btn.style.opacity='.6';btn.disabled=true;
+  const form=document.getElementById('enquiry-form');
+  // 同步 email 到 hidden replyto
+  document.getElementById('hidden-email').value=document.getElementById('p-email').value;
+  const loadMsgs={en:'Sending…',jp:'送信中…',cht:'傳送中…'};
+  btn.textContent=loadMsgs[l];btn.style.opacity='.6';btn.disabled=true;
+  try{
+    const res=await fetch('https://formspree.io/f/'+FORMSPREE_ID,{
+      method:'POST',
+      body:new FormData(form),
+      headers:{Accept:'application/json'}
+    });
+    if(res.ok){
+      const okMsgs={en:'Thank you — we\'ll be in touch soon.',jp:'ありがとうございます。近日中にご連絡いたします。',cht:'感謝您的洽詢，我們將盡快與您聯繫。'};
+      btn.textContent=okMsgs[l];
+      form.reset();
+    } else {
+      throw new Error('fail');
+    }
+  } catch(err){
+    const errMsgs={en:'Something went wrong. Please email us directly.',jp:'エラーが発生しました。直接メールでご連絡ください。',cht:'傳送失敗，請直接寄信給我們。'};
+    btn.textContent=errMsgs[l];
+    btn.style.opacity='1';btn.disabled=false;
+  }
 }
 
 /* ── Nav partner link ── */
