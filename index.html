@@ -244,8 +244,8 @@ nav a:hover{color:var(--ink)}
   position:relative;overflow:hidden;
 }
 .b-left{
-  display:flex;flex-direction:column;justify-content:flex-end;
-  padding:60px 44px 60px 40px;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:100px 44px 60px 40px;
   background:var(--surface2);
   position:relative;overflow:hidden;
 }
@@ -787,6 +787,101 @@ nav a:hover{color:var(--ink)}
   .fi-partners-grid{grid-template-columns:1fr}
 }
 
+/* ── About studio photo slot ── */
+.ab-photo-slot{
+  margin:24px 0;position:relative;
+  width:100%;height:220px;overflow:hidden;
+  border:1px solid var(--border-l);
+}
+.ab-photo-slot img{
+  width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;
+}
+.ab-photo-ph{
+  width:100%;height:100%;background:var(--surface2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.72rem;letter-spacing:.12em;color:var(--ink3);text-transform:uppercase;
+}
+.ab-photo-caption{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:6px 14px;
+  background:rgba(var(--surface-rgb,248,247,244),.85);
+  backdrop-filter:blur(6px);
+  font-size:.68rem;letter-spacing:.1em;color:var(--ink3);text-transform:uppercase;
+}
+
+/* ── Process photo strip ── */
+.pr-photo-strip{
+  position:relative;width:100%;height:260px;overflow:hidden;
+  margin:1px 0;border-top:1px solid var(--border-l);
+}
+.pr-photo-strip img{
+  width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;
+}
+.pr-photo-ph{
+  width:100%;height:100%;background:var(--surface2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.72rem;letter-spacing:.12em;color:var(--ink3);text-transform:uppercase;
+}
+.pr-photo-caption{
+  position:absolute;bottom:0;left:0;right:0;padding:10px 40px;
+  background:rgba(var(--surface-rgb,248,247,244),.88);backdrop-filter:blur(6px);
+  font-size:.74rem;color:var(--ink2);letter-spacing:.04em;
+}
+@media(max-width:900px){.pr-photo-strip{height:180px}.pr-photo-caption{padding:8px 24px}}
+
+/* ── Award exhibition photos ── */
+.fi-award-photos{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  background:rgba(255,255,255,.06);
+  margin-top:32px;border-top:1px solid rgba(255,255,255,.08);
+}
+.fi-award-photo-card{display:flex;flex-direction:column}
+.fi-award-photo-img{
+  height:200px;overflow:hidden;position:relative;
+}
+.fi-award-photo-img img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .5s;
+}
+.fi-award-photo-card:hover .fi-award-photo-img img{transform:scale(1.04)}
+.fi-award-photo-ph{
+  width:100%;height:100%;background:rgba(255,255,255,.04);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.68rem;letter-spacing:.1em;color:var(--filo-fg);opacity:.3;
+}
+.fi-award-photo-label{padding:18px 20px;background:rgba(255,255,255,.02)}
+.fi-award-photo-yr{
+  font-family:var(--ff-display);font-size:1.1rem;color:var(--filo-fg);opacity:.25;
+  line-height:1;margin-bottom:4px;
+}
+.fi-award-photo-name{font-size:.78rem;font-weight:600;color:var(--filo-fg);opacity:.8}
+.fi-award-photo-desc{font-size:.68rem;color:var(--filo-fg);opacity:.38;margin-top:5px;line-height:1.7}
+
+/* ── IG strip between S3 and S4 ── */
+.ig-strip{
+  border-top:1px solid var(--border-l);
+  background:var(--bg);
+}
+.ig-strip-label{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 40px;border-bottom:1px solid var(--border-l);
+}
+.ig-strip-label span{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink3)}
+.ig-strip-label a{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);transition:color .2s}
+.ig-strip-label a:hover{color:var(--ink)}
+@media(max-width:600px){.ig-strip-label{padding:12px 24px}}
+
+/* ── Partner card photo ── */
+.fi-partner-img{
+  width:100%;height:160px;overflow:hidden;margin-bottom:16px;
+}
+.fi-partner-img img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .5s;
+  filter:grayscale(20%);
+}
+.fi-partner-card:hover .fi-partner-img img{transform:scale(1.04);filter:grayscale(0%)}
+
 /* ─────────────────── S5 FOOTER ─────────────────── */
 #s5{
   background:var(--ink);color:var(--bg);
@@ -1022,23 +1117,38 @@ nav a:hover{color:var(--ink)}
       </h2>
       <div class="ab-body rv rv2">
         <p>
-          <span data-en>F WORD STUDIO is a Taiwan-based design and manufacturing partner — operating across product design, industrial design, OEM, and ODM for clients who need both creative precision and reliable production.</span>
-          <span data-jp>F WORD STUDIOは台湾を拠点とするデザイン・製造パートナーです。プロダクトデザイン、工業デザイン、OEM、ODMにわたり、創造的な精度と安定した生産を必要とするクライアントに対応します。</span>
-          <span data-cht>F WORD STUDIO是一家台灣設計與製造夥伴——跨足產品設計、工業設計、OEM與ODM，服務需要兼顧創意精準度與穩定生產力的客戶。</span>
+          <span data-en>F WORD STUDIO is an Asia-based design and manufacturing partner — with roots in product design, industrial design, OEM, and ODM for clients who need both creative precision and reliable production.</span>
+          <span data-jp>F WORD STUDIOはアジアを拠点とするデザイン・製造パートナーです。プロダクトデザイン、工業デザイン、OEM、ODMにわたり、創造的な精度と安定した生産を必要とするクライアントに対応します。</span>
+          <span data-cht>F WORD STUDIO是一家深耕亞洲的設計與製造夥伴——跨足產品設計、工業設計、OEM與ODM，服務需要兼顧創意精準度與穩定生產力的客戶。</span>
         </p>
         <p>
           <span data-en>We are a converted studio: designers who learned to make things, and makers who learned to design. This dual fluency is our core advantage — we don't just draw, we deliver.</span>
           <span data-jp>私たちは転業スタジオです。作ることを学んだデザイナーと、デザインを学んだメーカー。この二重の流暢さが私たちの核心的強みです。描くだけでなく、届けます。</span>
           <span data-cht>我們是一間轉業工作室：學會製造的設計師，以及學會設計的製造者。這種雙重流暢性是我們的核心優勢——不只是畫圖，我們真正交付成果。</span>
         </p>
+
+        <!-- Studio photo slot — upload: studio_photo.jpg -->
+        <div class="ab-photo-slot rv">
+          <img src="studio_photo.jpg" alt="F WORD STUDIO"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="ab-photo-ph" style="display:none">
+            <span>studio_photo.jpg</span>
+          </div>
+          <p class="ab-photo-caption">
+            <span data-en>F WORD STUDIO · Workshop</span>
+            <span data-jp>F WORD STUDIO · ワークショップ</span>
+            <span data-cht>F WORD STUDIO · 工作現場</span>
+          </p>
+        </div>
+
         <p>
-          <span data-en>Our own brand FILO 緋絡 — recognized with Red Dot Award 2015 and Good Design Award 2023 — proves what we bring to every project: internationally validated design thinking at a Taiwan production scale.</span>
-          <span data-jp>自社ブランドのFILO 緋絡は、Red Dot Award 2015とGood Design Award 2023を受賞。これが私たちがすべてのプロジェクトにもたらすものの証明です：台湾の生産規模で国際的に実証されたデザイン思考。</span>
-          <span data-cht>我們自有品牌FILO 緋絡——榮獲2015年紅點獎與2023年好設計獎——證明了我們帶入每個專案的能量：以台灣生產規模實現、獲國際認可的設計思維。</span>
+          <span data-en>Our own brand FILO 緋絡 — recognized with Red Dot Award 2015 and Good Design Award 2023 — proves what we bring to every project: internationally validated design thinking at production scale.</span>
+          <span data-jp>自社ブランドのFILO 緋絡は、Red Dot Award 2015とGood Design Award 2023を受賞。これが私たちがすべてのプロジェクトにもたらすものの証明です：生産規模で国際的に実証されたデザイン思考。</span>
+          <span data-cht>我們自有品牌FILO 緋絡——榮獲2015年紅點獎與2023年好設計獎——證明了我們帶入每個專案的能量：以生產規模實現、獲國際認可的設計思維。</span>
         </p>
       </div>
       <div class="ab-tags rv rv3">
-        <span class="ab-tag"><span data-en>Taiwan · Est. 2014</span><span data-jp>台湾・2014年</span><span data-cht>台灣・創立2014</span></span>
+        <span class="ab-tag"><span data-en>Asia · Est. 2014</span><span data-jp>アジア・2014年</span><span data-cht>亞洲・創立2014</span></span>
         <span class="ab-tag"><span data-en>Design · OEM · ODM</span><span data-jp>デザイン・OEM・ODM</span><span data-cht>設計・OEM・ODM</span></span>
         <span class="ab-tag"><span data-en>FILO Brand Owner</span><span data-jp>FILOブランドオーナー</span><span data-cht>FILO品牌擁有者</span></span>
         <span class="ab-tag"><span data-en>B2B · Wholesale</span><span data-jp>B2B・卸売</span><span data-cht>B2B・批發</span></span>
@@ -1160,6 +1270,20 @@ nav a:hover{color:var(--ink)}
     </div>
   </div>
 
+  <!-- Process photo strip — upload: process_photo.jpg -->
+  <div class="pr-photo-strip rv">
+    <img src="process_photo.jpg" alt="F WORD STUDIO — Design Process"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+    <div class="pr-photo-ph" style="display:none">
+      <span>process_photo.jpg</span>
+    </div>
+    <div class="pr-photo-caption">
+      <span data-en>From sketch to sample — every object starts here.</span>
+      <span data-jp>スケッチからサンプルまで——すべてのオブジェクトはここから始まる。</span>
+      <span data-cht>從草圖到樣品——每件作品都從這裡開始。</span>
+    </div>
+  </div>
+
   <div class="pr-bottom">
     <div class="pr-q rv">
       <div>
@@ -1185,6 +1309,48 @@ nav a:hover{color:var(--ink)}
     </div>
   </div>
 </section>
+
+<!-- ──── IG GALLERY — between S3 and S4 ──── -->
+<div class="ig-strip">
+  <div class="ig-strip-label">
+    <span>@f_word_studio</span>
+    <a href="https://www.instagram.com/f_word_studio/" target="_blank" rel="noopener">Instagram ↗</a>
+  </div>
+  <div class="fi-gallery">
+    <div class="fi-gallery-track" id="gallery-track">
+      <!-- Photos injected by JS, randomized each load -->
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  const igPhotos = [
+    'ig_01.jpg','ig_02.jpg','ig_03.jpg','ig_04.jpg',
+    'ig_05.jpg','ig_06.jpg','ig_07.jpg','ig_08.jpg',
+    'ig_09.jpg','ig_10.jpg','ig_11.jpg','ig_12.jpg'
+  ];
+  function shuffle(arr){
+    const a=[...arr];
+    for(let i=a.length-1;i>0;i--){
+      const j=Math.floor(Math.random()*(i+1));
+      [a[i],a[j]]=[a[j],a[i]];
+    }
+    return a;
+  }
+  const track = document.getElementById('gallery-track');
+  if(!track) return;
+  const combined = [...shuffle(igPhotos), ...shuffle(igPhotos)];
+  combined.forEach(function(src){
+    const div = document.createElement('div');
+    div.className = 'fi-gallery-item';
+    const img = document.createElement('img');
+    img.src = src; img.alt = 'F WORD STUDIO'; img.loading = 'lazy';
+    img.onerror = function(){ this.parentElement.innerHTML = '<div class="fi-gallery-ph">F</div>'; };
+    div.appendChild(img);
+    track.appendChild(div);
+  });
+})();
+</script>
 
 <!-- ──────── S4: FILO BRAND ──────── -->
 <section id="s4">
@@ -1252,9 +1418,43 @@ nav a:hover{color:var(--ink)}
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="fi-right">
+      <!-- Award exhibition photos -->
+      <div class="fi-award-photos rv rv3">
+        <div class="fi-award-photo-card">
+          <div class="fi-award-photo-img">
+            <img src="red_dot_MU.jpg" alt="Red Dot Award 2015 — Museum Exhibit"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="fi-award-photo-ph" style="display:none"><span>red_dot_MU.jpg</span></div>
+          </div>
+          <div class="fi-award-photo-label">
+            <p class="fi-award-photo-yr">2015</p>
+            <p class="fi-award-photo-name">Red Dot Award</p>
+            <p class="fi-award-photo-desc">
+              <span data-en>Exhibited at Red Dot Design Museum, Essen · Germany</span>
+              <span data-jp>レッド・ドット・デザイン・ミュージアム展示 · ドイツ エッセン</span>
+              <span data-cht>展示於德國埃森紅點設計博物館</span>
+            </p>
+          </div>
+        </div>
+        <div class="fi-award-photo-card">
+          <div class="fi-award-photo-img">
+            <img src="gd_2023_award.jpg" alt="Good Design Award 2023 — Exhibition"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <div class="fi-award-photo-ph" style="display:none"><span>gd_2023_award.jpg</span></div>
+          </div>
+          <div class="fi-award-photo-label">
+            <p class="fi-award-photo-yr">2023</p>
+            <p class="fi-award-photo-name">Good Design Award</p>
+            <p class="fi-award-photo-desc">
+              <span data-en>FILO N1D Day Backpack — Good Design Exhibition, Tokyo</span>
+              <span data-jp>FILO N1D デイバックパック — グッドデザイン展 · 東京</span>
+              <span data-cht>FILO N1D 日行後背包 — 好設計獎展覽 · 東京</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
       <a href="#prod-n1d" class="fi-visual-link" aria-label="View FILO N1D Day Pack">
         <div class="fi-visual fi-visual-photo">
           <img src="DSC_4116.jpg" alt="FILO N1D Day Backpack — Good Design Award 2023" class="fi-hero-photo">
@@ -1293,48 +1493,6 @@ nav a:hover{color:var(--ink)}
       </div>
     </div>
   </div>
-
-  <!-- ② Gallery marquee — F WORD STUDIO Instagram photos -->
-  <div class="fi-gallery">
-    <div class="fi-gallery-track" id="gallery-track">
-      <!-- Photos injected by JS from ig-photos array, randomized each load -->
-    </div>
-  </div>
-  <script>
-  (function(){
-    // ── 放你從 Instagram 下載的照片檔名在這裡 ──
-    const igPhotos = [
-      'ig_01.jpg','ig_02.jpg','ig_03.jpg','ig_04.jpg',
-      'ig_05.jpg','ig_06.jpg','ig_07.jpg','ig_08.jpg',
-      'ig_09.jpg','ig_10.jpg','ig_11.jpg','ig_12.jpg'
-    ];
-    // Fisher-Yates shuffle
-    function shuffle(arr){
-      const a=[...arr];
-      for(let i=a.length-1;i>0;i--){
-        const j=Math.floor(Math.random()*(i+1));
-        [a[i],a[j]]=[a[j],a[i]];
-      }
-      return a;
-    }
-    const track = document.getElementById('gallery-track');
-    if(!track) return;
-    const shuffled = shuffle(igPhotos);
-    // Duplicate for seamless loop
-    const combined = [...shuffled, ...shuffled];
-    combined.forEach(function(src){
-      const div = document.createElement('div');
-      div.className = 'fi-gallery-item';
-      const img = document.createElement('img');
-      img.src = src;
-      img.alt = 'F WORD STUDIO';
-      img.loading = 'lazy';
-      img.onerror = function(){ this.parentElement.innerHTML = '<div class="fi-gallery-ph">F WORD STUDIO</div>'; };
-      div.appendChild(img);
-      track.appendChild(div);
-    });
-  })();
-  </script>
 
   <!-- ③ Products grid — Brand philosophy + key products -->
   <div class="fi-products">
@@ -1514,6 +1672,10 @@ nav a:hover{color:var(--ink)}
 
         <!-- Tokyo #1 -->
         <div class="fi-partner-card rv">
+          <div class="fi-partner-img">
+            <img src="partner-superracer.jpg" alt="Cafe Super Racer"
+              onerror="this.style.display='none'">
+          </div>
           <div class="fi-partner-loc"><span class="fi-partner-flag">🇯🇵</span> <span>Tokyo</span></div>
           <p class="fi-partner-name">Cafe Super Racer</p>
           <p class="fi-partner-desc">
@@ -1528,6 +1690,10 @@ nav a:hover{color:var(--ink)}
 
         <!-- Tokyo #2 -->
         <div class="fi-partner-card rv rv1">
+          <div class="fi-partner-img">
+            <img src="partner-gds-tokyo.jpg" alt="Good Design Store Tokyo by Nohara"
+              onerror="this.style.display='none'">
+          </div>
           <div class="fi-partner-loc"><span class="fi-partner-flag">🇯🇵</span> <span>Tokyo</span></div>
           <p class="fi-partner-name">Good Design Store Tokyo by Nohara</p>
           <p class="fi-partner-desc">
@@ -1542,6 +1708,10 @@ nav a:hover{color:var(--ink)}
 
         <!-- Taiwan #1 -->
         <div class="fi-partner-card rv rv2">
+          <div class="fi-partner-img">
+            <img src="partner-blackbird.jpg" alt="Blackbird Coffee"
+              onerror="this.style.display='none'">
+          </div>
           <div class="fi-partner-loc"><span class="fi-partner-flag">🇹🇼</span> <span>Taiwan · Taipei</span></div>
           <p class="fi-partner-name">Blackbird Coffee</p>
           <p class="fi-partner-desc">
@@ -1556,6 +1726,10 @@ nav a:hover{color:var(--ink)}
 
         <!-- Taiwan #2 -->
         <div class="fi-partner-card rv rv3">
+          <div class="fi-partner-img">
+            <img src="partner-kick.jpg" alt="KICK CAFÉ"
+              onerror="this.style.display='none'">
+          </div>
           <div class="fi-partner-loc"><span class="fi-partner-flag">🇹🇼</span> <span>Taiwan · New Taipei</span></div>
           <p class="fi-partner-name">KICK CAFÉ</p>
           <p class="fi-partner-desc">
