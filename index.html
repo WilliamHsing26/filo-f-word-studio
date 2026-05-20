@@ -563,7 +563,7 @@ nav a:hover{color:var(--ink)}
   position:relative;z-index:1;
 }
 .fi-products-header{
-  padding:52px 40px 36px;
+  padding:36px 40px 28px;
   display:flex;align-items:flex-end;justify-content:space-between;gap:20px;
   border-bottom:1px solid rgba(255,255,255,.08);
 }
@@ -585,9 +585,11 @@ nav a:hover{color:var(--ink)}
   display:flex;flex-direction:column;
   transition:background .25s;
   cursor:default;
+  overflow:hidden;
 }
-.fi-prod-card:hover{background:rgba(255,255,255,.04)}
+.fi-prod-card:hover{background:var(--filo-bg)}
 .fi-prod-img{
+  flex:1 1 auto;
   aspect-ratio:1/1;overflow:hidden;position:relative;
   background:rgba(255,255,255,.04);
 }
@@ -602,7 +604,11 @@ nav a:hover{color:var(--ink)}
   display:flex;align-items:center;justify-content:center;
   opacity:.12;
 }
-.fi-prod-info{padding:20px 24px 24px}
+.fi-prod-info{
+  padding:20px 24px 24px;
+  background:var(--filo-bg);
+  flex:0 0 auto;
+}
 .fi-prod-name{font-size:.85rem;font-weight:500;color:var(--filo-fg);opacity:.85;margin-bottom:5px}
 .fi-prod-desc{font-size:.7rem;color:var(--filo-fg);opacity:.4;line-height:1.75}
 .fi-prod-badge{
@@ -652,8 +658,9 @@ nav a:hover{color:var(--ink)}
 /* FILO channel section */
 .fi-channel{
   border-top:1px solid rgba(255,255,255,.08);
-  background:rgba(255,255,255,.03);
+  background:var(--filo-bg);
   position:relative;z-index:1;
+  color:var(--filo-fg);
 }
 .fi-ch-inner{
   display:grid;grid-template-columns:1fr 1fr;
@@ -741,6 +748,7 @@ nav a:hover{color:var(--ink)}
   padding:80px 40px 60px;
   border-bottom:1px solid rgba(255,255,255,.08);
   position:relative;z-index:1;
+  background:var(--filo-bg);
 }
 .fi-partners-eye{
   font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
